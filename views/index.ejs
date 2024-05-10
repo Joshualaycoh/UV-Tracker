@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capstone API</title>
+    <link rel="stylesheet" href="styles/style.css">
+
 </head>
 <body>
 
-    <h1>Hello</h1>
+<div class="container">
+    <h1>Check UV Index</h1>
+<div class="sub-container1">
+ <%if(locals.uvIndex){ %>
+    <h2 class="circle-text"><%=uvIndex %></h2>
+<% }else{ %>
+<h2 class="circle-text">UV</h2>
+<% } %>
+</div>
+<div class="sub-container2">
+   
+    <form action="/submit" method="POST">
+        <input type="text" id="lat" name="lat" placeholder="Enter you location"><br>
+        <input type="submit" value="Submit" style="margin-top: 10px;padding: 3px 20px 3px 20px ; border-radius: 2px; margin-left: 50px;">
+    </form>
+</div>
+</div>
+
     
 </body>
 </html>
