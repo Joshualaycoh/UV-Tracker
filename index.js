@@ -16,12 +16,19 @@ app.get("/", (req,res) => {
 
 app.post("/submit", async (req,res) => {
   const { location } = req.body;
-  // Convert location to lat, lng using geocoding API
-  const geoResponse = await axios.get(`http://api.positionstack.com/v1/forward?access_key=YOUR_ACTUAL_POSITIONSTACK_API_KEY&query=${location}`);
-
-  const { latitude: lat, longitude: lng } = geoResponse.data.data[0];
+ 
+   // Check if location is defined
+   if (!location) {
+    console.log('Location is not defined:', req.body);
+    return res.status(400).send('Location is required.');
+  }
+  
 
   try{
+    // Convert location to lat, lng using geocoding API
+    const geoResponse = await axios.get(`http://api.positionstack.com/v1/forward?access_key=45f50e43f2a39ff18c1b6a53f2e2ee9a&query=${location}`);
+    const { latitude: lat, longitude: lng } = geoResponse.data.data[0];
+
     const response = await axios.get(`https://api.openuv.io/api/v1/uv?lat=${lat}&lng=${lng}`, {
       headers: {
         'x-access-token': 'openuv-15gjb5grlvssbc14-io'

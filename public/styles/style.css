@@ -1,81 +1,69 @@
 body{
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
-  background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;  
-
-}
-
-h1{
-    color: white;
-    font-size: 50px;
-    margin-bottom: 10px;
-}
-
-form{
-    margin-top: 10px;
-}
-
-label{
-    color: white;
-}
-
-input{
-    border-color: white;
-}
-
-
-
-@keyframes gradient-animation {
-    0% {
-      background-position: 0% 70%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 70%;
-    }
-    
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;  
   }
-
-  .container{
-   display: flex;
-   justify-content: center;
-   height: 100vh;
-   flex-direction: column;
-   align-items: center;
-  }
-
-  .sub-container1{
-    height: 240px;
-    width: 240px;
-    border-radius: 50%;
-    border: 50px solid  #00bfff;
   
-    /* To make the inside of the circle transparent */
-    background: transparent;
-    
+  h1{
+      font-size: 60px;
+      margin-bottom: 10px;
   }
 
+  h2{
+    color: white !important;
+  }
+
+  h3{
+    color: #555555 !important;
+  }
+
+  p{
+    color: white !important;
+  }
+  
+  input{
+      border-color: white;
+      background-color: white;
+      color: black;
+  }
+  
+
+
+
+
+
+  @keyframes gradient-animation {
+      0% {
+        background-position: 0% 70%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 70%;
+      }
+  }
+  
+  .sub-container1{
+      height: 300px;
+      width: 300px;
+      border-radius: 50%;
+      border: 50px solid  #00bfff;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
   .circle-text {
-    /* To position the text in the middle of the circle */
-    position: absolute;
-    top: 47%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
-    /* To center the text */
-    text-align: center;
-    
-    /* Size of the text */
-    font-size: 40px;
-    
-    /* Color of the text */
-    color: white;
-
+      text-align: center;
+      font-size: 40px;
+      color: white;
   }
+  
+  
 
   @media (max-width: 600px) {
     .sub-container1 {
